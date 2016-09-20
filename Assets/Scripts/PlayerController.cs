@@ -5,13 +5,13 @@ public class PlayerController : MonoBehaviour
 {
 	public float speed;
 
-
     private Rigidbody rbody;
 
 	void Start ()
 	{
 
         rbody = GetComponent<Rigidbody>();
+        rbody.maxAngularVelocity = 5000;
 	}
 
 	void FixedUpdate ()
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
 		rbody.AddForce(movement * speed * Time.deltaTime,ForceMode.Impulse);
 
-        rbody.velocity *= 0.99f;
+        rbody.velocity = new Vector3(rbody.velocity.x * 0.99f, rbody.velocity.y,rbody.velocity.z*0.99f);
 	}
 
 	void OnTriggerEnter(Collider other)
