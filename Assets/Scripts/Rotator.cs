@@ -15,6 +15,5 @@ public class Rotator : MonoBehaviour
 	void Update () 
 	{
 		transform.Rotate (new Vector3 (15, randomYStuff, 45) * Time.deltaTime);
-
 	}
 }
