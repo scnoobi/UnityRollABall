@@ -13,7 +13,9 @@ public class Cheats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+#if CHEATS
         theCheats();
+#endif
 	}
 
     void theCheats()
